@@ -26,8 +26,8 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, Screen>;
 
 export type RootTabParamList = {
-  LinkFeatureTab: undefined;
-  TabTwo: undefined;
+  LinkFeatureTab: NavigatorScreenParams<LinkFeatureStackParamList> | undefined;
+  TabTwo: NavigatorScreenParams<Tab2StackParamList> | undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
@@ -48,3 +48,14 @@ export type LinkFeatureScreenProps<
   NativeStackScreenProps<LinkFeatureStackParamList, Screen>,
   RootTabScreenProps<keyof RootTabParamList>
 >;
+
+export type Tab2StackParamList = {
+  Tab2Default: undefined;
+  Tab2Other: undefined;
+};
+
+export type Tab2ScreenProps<Screen extends keyof Tab2StackParamList> =
+  CompositeScreenProps<
+    NativeStackScreenProps<Tab2StackParamList, Screen>,
+    RootTabScreenProps<keyof RootTabParamList>
+  >;

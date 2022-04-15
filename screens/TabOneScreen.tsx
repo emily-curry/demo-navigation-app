@@ -68,6 +68,24 @@ export default function TabOneScreen({
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
+      <TouchableOpacity
+        onPress={() => {
+          // NAV: Note that the compiler automatically identifies and enforces the route name I may pass to the first arg to `navigate`.
+          // We cannot do cross-tab navigation without specifying a route that exists in a navigator shared navigator, and then specifying from there.
+          navigation.navigate("TabTwo", { screen: "Tab2Other" });
+        }}
+        style={styles.button}
+      >
+        <Text style={styles.title}>Open Page in Another Tab</Text>
+        <Text style={styles.subtitle}>
+          This is a page inside the stack of a different tab.
+        </Text>
+      </TouchableOpacity>
+      <View
+        style={styles.separator}
+        lightColor="#eee"
+        darkColor="rgba(255,255,255,0.1)"
+      />
       <Text style={styles.subtitle}>
         vvv Scroll down to demo tab button behavior. vvv
       </Text>

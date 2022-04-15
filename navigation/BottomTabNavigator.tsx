@@ -1,14 +1,12 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import { Pressable, useColorScheme } from "react-native";
+import { useColorScheme } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import { RootTabParamList, RootTabScreenProps } from "../types";
 import { LinkFeatureNavigator } from "./LinkFeatureNavigator";
-import { Text } from "react-native";
-import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
+import { Tab2Navigator } from "./Tab2Navigator";
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
@@ -40,7 +38,7 @@ export function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="TabTwo"
-        component={TabTwoScreen}
+        component={Tab2Navigator}
         options={{
           title: "Tab Two",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
