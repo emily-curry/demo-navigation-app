@@ -56,7 +56,13 @@ export const SharedHeader: React.FC<NativeStackHeaderProps> = (props) => {
         return (
           <HeaderBackButton
             onPress={props.navigation.goBack}
-            style={{ justifyContent: "center", alignItems: "center" }}
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              width: 44,
+              height: 44,
+              marginLeft: 5,
+            }}
             backImage={() => {
               return (
                 <Image
